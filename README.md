@@ -2,7 +2,7 @@
 
 By Wahyudi Robby Sutanto
 
-Video overview: <URL HERE>
+Video overview: <https://youtu.be/J-IRkQ1N330>
 
 ## Scope
 
