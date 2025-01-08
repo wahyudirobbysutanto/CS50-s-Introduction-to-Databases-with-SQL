@@ -1,6 +1,6 @@
-create database `final_project`
+create database `final_project`;
 
-use `final_project`
+use `final_project`;
 
 --
 -- Table structure for table `barang`
