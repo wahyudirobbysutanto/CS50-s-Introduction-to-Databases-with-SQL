@@ -1,5 +1,5 @@
 
-use `final_project`
+use `final_project`;
 
 INSERT INTO `company_info` (`company_name`, `company_logo`, `status`, `created_date`, `created_by`, `modified_date`, `modified_by`) VALUES
 ('O YEAH', 'assets/img/O_YEAH.png', 1, '2025-01-06', 'SYSTEM', NULL, NULL);
@@ -17,6 +17,6 @@ WHERE id_kategori = 1;
 
 
 SELECT B.*
-FROM `barang` A
+FROM `invoice` A
 INNER JOIN `invoice_detail` B on A.invoice_no = B.invoice_no
 WHERE invoice_no = 'XXXX';
