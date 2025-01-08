@@ -2,7 +2,9 @@
 
 By Wahyudi Robby Sutanto
 
-Video overview: <URL HERE>
+github : [https://github.com/wahyudirobbysutanto/CS50-s-Introduction-to-Databases-with-SQL]
+
+Video overview: [https://youtu.be/J-IRkQ1N330]
 
 ## Scope
 
