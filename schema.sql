@@ -288,3 +288,40 @@ ALTER TABLE `invoice_detail`
   ADD CONSTRAINT `invoice_detail_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`),
   ADD CONSTRAINT `invoice_detail_ibfk_2` FOREIGN KEY (`no_harga_beli`) REFERENCES `harga_beli` (`no`);
 
+
+CREATE INDEX invoice_index_createdby_createddate
+ON `invoice` (created_by, created_date);
+
+CREATE INDEX invoice_index_createddate
+ON `invoice` (created_date);
+
+
+CREATE VIEW invoice_2024 AS
+  SELECT
+    *
+  FROM invoice
+  WHERE YEAR(created_date) = "2024";
+
+CREATE VIEW invoice_kasir1_2024 AS
+  SELECT
+    *
+  FROM invoice
+  WHERE YEAR(created_date) = "2024" AND created_by = "kasir1";
+
+DELIMITER //
+
+CREATE TRIGGER invoice_inserted
+AFTER INSERT ON invoice_detail
+FOR EACH ROW
+BEGIN
+  UPDATE invoice
+  SET total = (
+    SELECT SUM(harga_jual)
+    FROM invoice_detail
+    WHERE invoice_no = NEW.invoice_no
+  )
+  WHERE invoice_no = NEW.invoice_no;
+END;
+//
+
+DELIMITER ;
